@@ -1,0 +1,254 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         19/May/2018  09:44:34 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\Sou #
+#                          rce\clock.c                                        #
+#    Command line       =  -f E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5. #
+#                          1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg      #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Ê #
+#                          ý\ZStack-CC2530-2.5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xF000                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Ê #
+#                          ý\ZStack-CC2530-2.5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstac #
+#                          k\Samples\SampleApp\Source\clock.c -D              #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -lC E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5 #
+#                          .1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\EndDeviceEB\List\ -lA                    #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB\List\ --diag_suppress            #
+#                          Pe001,Pa010 -o E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack #
+#                          -CC2530-2.5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\Obj\ -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5. #
+#                          1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\ -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-C #
+#                          C2530-2.5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\Source\ -I                   #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\ZMain\TI2530DB\ -I                  #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\hal\include\ -I    #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\hal\target\CC2530E #
+#                          B\ -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2 #
+#                          .5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleA #
+#                          pp\CC2530DB\..\..\..\..\..\Components\mac\include\ #
+#                           -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5 #
+#                          .1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\Components\mac\high_level #
+#                          \ -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2. #
+#                          5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleAp #
+#                          p\CC2530DB\..\..\..\..\..\Components\mac\low_level #
+#                          \srf04\ -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2 #
+#                          530-2.5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\Sa #
+#                          mpleApp\CC2530DB\..\..\..\..\..\Components\mac\low #
+#                          _level\srf04\single_chip\ -I                       #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\mt\ -I             #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\osal\include\ -I   #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\services\saddr\    #
+#                          -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5. #
+#                          1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\..\..\..\..\..\Components\services\sdata\ #
+#                           -I E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5 #
+#                          .1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\Components\stack\af\ -I   #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\nwk\ -I      #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sapi\ -I     #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sec\ -I      #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sys\ -I      #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\zdo\ -I      #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\zmac\ -I           #
+#                          E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz     #
+#                          --require_prototypes                               #
+#    List file          =  E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB\List\clock.lst                   #
+#    Object file        =  E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a- #
+#                          ¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB\Obj\clock.r51                    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ÁºÓî\ÏîÄ¿2\zigbee¶ÁÈ¡º¯Êý\ZStack-CC2530-2.5.1a-¼ÓËÙ¶È´«¸ÐÆ÷\Projects\zstack\Samples\SampleApp\Source\clock.c
+      1          /**************************************/
+      2          /*           WeBeeÍÅ¶Ó                */
+      3          /*           Zigbee                   */
+      4          /*Àý³ÌÃû³Æ£º                          */
+      5          /*½¨Á¢Ê±¼ä£º2018/5/18                 */
+      6          /*ÃèÊö£ºclock£¨Ê±ÖÓ£©
+      7          **************************************/
+      8          
+      9          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+     10          #include "type.h"
+     11          #include "clock.h"
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     12          void clockInit(void)
+   \                     clockInit:
+     13          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     14            CLKCONCMD &= ~0x40;               //ÉèÖÃÏµÍ³Ê±ÖÓÔ´Îª32MHZ¾§Õñ
+   \   000000   53C6BF       ANL     0xc6,#0xbf
+     15            while(CLKCONSTA & 0x40);          //µÈ´ý¾§ÕñÎÈ¶¨Îª32M
+   \                     ??clockInit_0:
+   \   000003   E59E         MOV     A,0x9e
+   \   000005   A2E6         MOV     C,0xE0 /* A   */.6
+   \   000007   40FA         JC      ??clockInit_0
+     16            CLKCONCMD &= ~0x47;               //ÉèÖÃÏµÍ³Ö÷Ê±ÖÓÆµÂÊÎª32MHZ   
+   \   000009   53C6B8       ANL     0xc6,#0xb8
+     17          }
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE CLKCONCMD
+   \   00000F                REQUIRE CLKCONSTA
+     18          
+     19          /**************************************
+     20                    32M¾§ÕñºÁÃëÑÓÊ±º¯Êý
+     21          **************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     22          void delayMs(uint16 t)
+   \                     delayMs:
+     23          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     24            uint16 k,j;
+     25            for(k=0;k<t;k++)
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??delayMs_0
+     26            {
+     27              for(j=0;j<1774;j++);
+   \                     ??delayMs_1:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   08           INC     R0
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??delayMs_0:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   9A           SUBB    A,R2
+   \   000011   E9           MOV     A,R1
+   \   000012   9B           SUBB    A,R3
+   \   000013   40F1         JC      ??delayMs_1
+     28            }
+     29          }
+   \   000015   02....       LJMP    ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??clockInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    clockInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delayMs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delayMs
+
+   Maximum stack usage in bytes:
+
+     Function  ISTACK PSTACK XSTACK
+     --------  ------ ------ ------
+     clockInit     0      0      0
+     delayMs       0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label    Bytes
+     --------------    -----
+     CLKCONSTA            1
+     CLKCONCMD            1
+     clockInit           15
+     delayMs             24
+     ??clockInit?relay    6
+     ??delayMs?relay      6
+
+ 
+ 39 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  2 bytes in segment SFR_AN
+ 
+ 51 bytes of CODE memory
+  0 bytes of DATA memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

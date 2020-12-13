@@ -1,0 +1,634 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         19/May/2018  14:33:17 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\Sou #
+#                          rce\DemoSensor.c                                   #
+#    Command line       =  -f E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5. #
+#                          1a-加速度传感器\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg      #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f E:\梁宇\项目2\zigbee读取cah #
+#                          o\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xF000                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\梁宇\项目2\zigbee读取cah #
+#                          o\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstac #
+#                          k\Samples\SampleApp\Source\DemoSensor.c -D         #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -lC E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5 #
+#                          .1a-加速度传感器\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\EndDeviceEB\List\ -lA                    #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB\List\ --diag_suppress            #
+#                          Pe001,Pa010 -o E:\梁宇\项目2\zigbee读取caho\ZStack #
+#                          -CC2530-2.5.1a-加速度传感器\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\Obj\ -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5. #
+#                          1a-加速度传感器\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\ -I E:\梁宇\项目2\zigbee读取caho\ZStack-C #
+#                          C2530-2.5.1a-加速度传感器\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\Source\ -I                   #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\ZMain\TI2530DB\ -I                  #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\hal\include\ -I    #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\hal\target\CC2530E #
+#                          B\ -I E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2 #
+#                          .5.1a-加速度传感器\Projects\zstack\Samples\SampleA #
+#                          pp\CC2530DB\..\..\..\..\..\Components\mac\include\ #
+#                           -I E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5 #
+#                          .1a-加速度传感器\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\Components\mac\high_level #
+#                          \ -I E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2. #
+#                          5.1a-加速度传感器\Projects\zstack\Samples\SampleAp #
+#                          p\CC2530DB\..\..\..\..\..\Components\mac\low_level #
+#                          \srf04\ -I E:\梁宇\项目2\zigbee读取caho\ZStack-CC2 #
+#                          530-2.5.1a-加速度传感器\Projects\zstack\Samples\Sa #
+#                          mpleApp\CC2530DB\..\..\..\..\..\Components\mac\low #
+#                          _level\srf04\single_chip\ -I                       #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\mt\ -I             #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\osal\include\ -I   #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\services\saddr\    #
+#                          -I E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5. #
+#                          1a-加速度传感器\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\..\..\..\..\..\Components\services\sdata\ #
+#                           -I E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5 #
+#                          .1a-加速度传感器\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\Components\stack\af\ -I   #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\nwk\ -I      #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sapi\ -I     #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sec\ -I      #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sys\ -I      #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\zdo\ -I      #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\zmac\ -I           #
+#                          E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz     #
+#                          --require_prototypes                               #
+#    List file          =  E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB\List\DemoSensor.lst              #
+#    Object file        =  E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a- #
+#                          加速度传感器\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB\Obj\DemoSensor.r51               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c
+      1          /**************************************************************************************************
+      2            Filename:       DemoSensor.c
+      3          
+      4            Description:    Sensor application for the sensor demo utilizing the Simple API.
+      5          
+      6                            The sensor application binds to a gateway and will periodically 
+      7                            read temperature and supply voltage from the ADC and send report   
+      8                            towards the gateway node.  
+      9          
+     10          
+     11            Copyright 2009 Texas Instruments Incorporated. All rights reserved.
+     12          
+     13            IMPORTANT: Your use of this Software is limited to those specific rights
+     14            granted under the terms of a software license agreement between the user
+     15            who downloaded the software, his/her employer (which must be your employer)
+     16            and Texas Instruments Incorporated (the "License").  You may not use this
+     17            Software unless you agree to abide by the terms of the License. The License
+     18            limits your use, and you acknowledge, that the Software may not be modified,
+     19            copied or distributed unless embedded on a Texas Instruments microcontroller
+     20            or used solely and exclusively in conjunction with a Texas Instruments radio
+     21            frequency transceiver, which is integrated into your product.  Other than for
+     22            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     23            works of, modify, distribute, perform, display or sell this Software and/or
+     24            its documentation for any purpose.
+     25          
+     26            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     27            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     28            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     29            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     30            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     31            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     32            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     33            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     34            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     35            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     36            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     37          
+     38            Should you have any questions regarding your right to use this Software,
+     39            contact Texas Instruments Incorporated at www.TI.com.
+     40          **************************************************************************************************/
+     41          
+     42          /******************************************************************************
+     43           * INCLUDES
+     44           */
+     45          
+     46          #include "OSAL.h"
+     47          #include "hal_key.h"
+     48          #include "hal_lcd.h"
+     49          #include "hal_led.h"
+     50          #include "hal_adc.h"
+     51          #include "hal_mcu.h"
+     52          #include "hal_uart.h"
+     53          #include "ioCC2530.h"
+     54          
+     55          #define uint  unsigned int
+     56          #define uchar unsigned char
+     57          
+     58          /******************************************************************************
+     59           * CONSTANTS
+     60           */
+     61          #define REPORT_FAILURE_LIMIT                4
+     62          #define ACK_REQ_INTERVAL                    5 // each 5th packet is sent with ACK request
+     63          
+     64          // Application States
+     65          #define APP_INIT                            0    // Initial state
+     66          #define APP_START                           1    // Sensor has joined network
+     67          #define APP_BIND                            2    // Sensor is in process of binding
+     68          #define APP_REPORT                          4    // Sensor is in reporting state
+     69          
+     70          // Application osal event identifiers
+     71          // Bit mask of events ( from 0x0000 to 0x00FF )
+     72          #define MY_START_EVT                        0x0001
+     73          #define MY_REPORT_EVT                       0x0002
+     74          #define MY_FIND_COLLECTOR_EVT               0x0004
+     75          
+     76          // ADC definitions for CC2430/CC2530 from the hal_adc.c file
+     77          #if defined (HAL_MCU_CC2530)
+     78          #define HAL_ADC_REF_125V    0x00    /* Internal 1.25V Reference */
+     79          #define HAL_ADC_DEC_064     0x00    /* Decimate by 64 : 8-bit resolution */
+     80          #define HAL_ADC_DEC_128     0x10    /* Decimate by 128 : 10-bit resolution */
+     81          #define HAL_ADC_DEC_512     0x30    /* Decimate by 512 : 14-bit resolution */
+     82          #define HAL_ADC_CHN_VDD3    0x0f    /* Input channel: VDD/3 */
+     83          #define HAL_ADC_CHN_TEMP    0x0e    /* Temperature sensor */
+     84          #endif // HAL_MCU_CC2530
+     85          
+     86          // 定义74HC165 IO
+     87          //*********************************************************************
+     88          #define Q7 P1_5 //接收位定义
+     89          #define PL P1_6 //转载/移位位定义
+     90          #define CP P1_7 //时钟位定义
+     91          //*********************************************************************
+     92          
+     93          // 定义MPU6050 IO
+     94          //*********************************************************************
+     95          #define SCL P0_0 //I2C时钟引脚定义
+     96          #define SDA P0_1 //I2C数据引脚定义
+     97          //*********************************************************************
+     98          
+     99          // 定义MPU6050内部地址
+    100          //*********************************************************************
+    101          #define	SMPLRT_DIV	0x19	//陀螺仪采样率，典型值：0x07(125Hz) 
+    102          #define	CONFIG		0x1A	//低通滤波频率，典型值：0x06(5Hz)
+    103          #define	GYRO_CONFIG	0x1B	//陀螺仪自检及测量范围，典型值：0x18(不自检，2000deg/s)
+    104          #define	ACCEL_CONFIG	0x1C	//加速计自检、测量范围及高通滤波频率，典型值：0x01(不自检，2G，5Hz)
+    105          #define	ACCEL_XOUT_H	0x3B
+    106          #define	ACCEL_XOUT_L	0x3C
+    107          #define	ACCEL_YOUT_H	0x3D
+    108          #define	ACCEL_YOUT_L	0x3E
+    109          #define	ACCEL_ZOUT_H	0x3F
+    110          #define	ACCEL_ZOUT_L	0x40
+    111          #define	TEMP_OUT_H	0x41
+    112          #define	TEMP_OUT_L	0x42
+    113          #define	GYRO_XOUT_H	0x43
+    114          #define	GYRO_XOUT_L	0x44	
+    115          #define	GYRO_YOUT_H	0x45
+    116          #define	GYRO_YOUT_L	0x46
+    117          #define	GYRO_ZOUT_H	0x47
+    118          #define	GYRO_ZOUT_L	0x48
+    119          #define	PWR_MGMT_1	0x6B	//电源管理，典型值：0x00(正常启用)
+    120          #define	WHO_AM_I	0x75	//I2C地址寄存器(默认数值0x68，只读)
+    121          #define	SlaveAddress	0xD0	//I2C写入时的地址字节数据，+1为读取
+    122          //*********************************************************************
+    123          
+    124          
+    125          #if defined FB2530BB
+    126          #define HAL_ADC_LSENS_CHN   HAL_ADC_CHANNEL_5
+    127          #endif
+    128          //#define HAL_KEY_JOY_CHN   HAL_ADC_CHANNEL_6
+    129          
+    130          
+    131          /******************************************************************************
+    132           * LOCAL VARIABLES
+    133           */
+    134          
+    135          static uint8 appState =           APP_INIT;
+    136          static uint8 reportState =        FALSE;
+    137          
+    138          static uint8 reportFailureNr =    0;
+    139          
+    140          static uint16 myReportPeriod =    2000;         // milliseconds
+    141          static uint16 myBindRetryDelay =  2000;         // milliseconds
+    142          
+    143          static uint16 parentShortAddr;
+    144          
+    145          
+    146          /******************************************************************************
+    147           * GLOBAL VARIABLES
+    148           */
+    149          
+    150          // Inputs and Outputs for Sensor device
+    151          #define NUM_OUT_CMD_SENSOR                1
+    152          #define NUM_IN_CMD_SENSOR                 0
+    153          
+    154          // List of output and input commands for Sensor device
+    155          const cId_t zb_OutCmdList[NUM_OUT_CMD_SENSOR] =
+                       ^
+Error[Pe020]: identifier "cId_t" is undefined
+    156          {
+    157            SENSOR_REPORT_CMD_ID
+                   ^
+Error[Pe020]: identifier "SENSOR_REPORT_CMD_ID" is undefined
+    158          };
+    159          
+    160          // Define SimpleDescriptor for Sensor device
+    161          const SimpleDescriptionFormat_t zb_SimpleDesc =
+                       ^
+Error[Pe020]: identifier "SimpleDescriptionFormat_t" is undefined
+    162          {
+    163            MY_ENDPOINT_ID,             //  Endpoint
+                   ^
+Error[Pe020]: identifier "MY_ENDPOINT_ID" is undefined
+    164            MY_PROFILE_ID,              //  Profile ID
+                   ^
+Error[Pe020]: identifier "MY_PROFILE_ID" is undefined
+    165            DEV_ID_SENSOR,              //  Device ID
+                   ^
+Error[Pe020]: identifier "DEV_ID_SENSOR" is undefined
+    166            DEVICE_VERSION_SENSOR,      //  Device Version
+                   ^
+Error[Pe020]: identifier "DEVICE_VERSION_SENSOR" is undefined
+    167            0,                          //  Reserved
+    168            NUM_IN_CMD_SENSOR,          //  Number of Input Commands
+    169            (cId_t *) NULL,             //  Input Command List
+                    ^
+Error[Pe020]: identifier "cId_t" is undefined
+
+    (cId_t *) NULL,             //  Input Command List
+            ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",169  Error[Pe029]: 
+          expected an expression
+
+    (cId_t *) NULL,             //  Input Command List
+              ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",169  Error[Pe067]: 
+          expected a "}"
+    170            NUM_OUT_CMD_SENSOR,         //  Number of Output Commands
+    171            (cId_t *) zb_OutCmdList     //  Output Command List
+    172          };
+                 ^
+Warning[Pe012]: parsing restarts here after previous syntax error
+    173          
+    174          /******************************************************************************
+    175           * LOCAL FUNCTIONS
+    176           */
+    177          
+    178          void uartRxCB( uint8 port, uint8 event );
+    179          static void sendReport(void);
+    180          static uint8 readVoltage(void);
+    181          
+    182          void delay_usec(uchar u);
+    183          void WriteSDA_0(void);
+    184          void WriteSDA_1(void);
+    185          void WriteSCL_0(void);
+    186          void WriteSCL_1(void);
+    187          void ReadSDA(void);
+    188          void Init_IO(void);
+    189          void I2C_Start(void);
+    190          void I2C_Stop(void);
+    191          void I2C_SendACK(uchar ack);
+    192          uchar I2C_RecvACK(void);
+    193          void I2C_SendByte(uchar data);
+    194          uchar I2C_RecvByte(void);
+    195          void Single_WriteI2C(uchar REG_Address,uchar REG_data);
+    196          uchar Single_ReadI2C(uchar REG_Address);
+    197          void InitMPU6050(void);
+    198          int GetData(uint8 REG_Address);
+    199          
+    200          void Delay_165(void);
+    201          void init_74HC165(void);
+    202          unsigned char read_74HC165(void);
+    203          
+    204          
+    205          /*****************************************************************************
+    206           * @fn          hal_SensorInit(void)
+    207           *
+    208           * @brief       SensorInit / Append by Ryan
+    209           *              	system will call the function when start
+    210           *
+    211           * @param       none
+    212           *
+    213           * @return      none
+    214           */
+    215          void hal_SensorInit(void)
+                      ^
+Error[Pa045]: function "hal_SensorInit" has no prototype
+
+  static uint8 appState =           APP_INIT;
+               ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",135  Warning[Pe177]: 
+          variable "appState" was declared but never referenced
+
+  static uint8 reportState =        FALSE;
+               ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",136  Warning[Pe177]: 
+          variable "reportState" was declared but never referenced
+
+  static uint8 reportFailureNr =    0;
+               ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",138  Warning[Pe177]: 
+          variable "reportFailureNr" was declared but never referenced
+
+  static uint16 myReportPeriod =    2000;         // milliseconds
+                ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",140  Warning[Pe177]: 
+          variable "myReportPeriod" was declared but never referenced
+
+  static uint16 myBindRetryDelay =  2000;         // milliseconds
+                ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",141  Warning[Pe177]: 
+          variable "myBindRetryDelay" was declared but never referenced
+
+  static uint16 parentShortAddr;
+                ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",143  Warning[Pe177]: 
+          variable "parentShortAddr" was declared but never referenced
+
+  static void sendReport(void);
+              ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",179  Warning[Pe177]: 
+          function "sendReport" was declared but never referenced
+
+  static uint8 readVoltage(void);
+               ^
+"E:\梁宇\项目2\zigbee读取caho\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\DemoSensor.c",180  Warning[Pe177]: 
+          function "readVoltage" was declared but never referenced
+    216          {
+    217             Init_IO();
+    218             InitMPU6050();
+    219             init_74HC165();
+    220          }
+    221          
+    222          
+    223          /****************us延时函数 32M晶振 单周期MCU********************/
+    224          void delay_usec(uchar u)
+    225          {
+    226            while(u --)
+    227            {
+    228              /* 32 NOPs == 1 usecs */
+    229              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+    230              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+    231              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+    232              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+    233              asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    234              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+    235              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+    236              asm("nop"); asm("nop"); asm("nop"); asm("nop");
+    237            }
+    238          }
+    239          
+    240          /*****************************MPU6050*******************************/
+    241          void WriteSDA_0() 
+    242          {
+    243              P0DIR|=0x02;
+    244              SDA=0;
+    245          }
+    246          
+    247          void WriteSDA_1() 
+    248          {
+    249              P0DIR|=0x02;
+    250              SDA=1;
+    251          }
+    252              
+    253          void WriteSCL_0()    
+    254          {
+    255              P0DIR|=0x01;
+    256              SCL=0;
+    257          }
+    258          
+    259          void WriteSCL_1()    
+    260          {
+    261              P0DIR|=0x01;
+    262              SCL=1;
+    263          }
+    264          
+    265          void ReadSDA(void)
+    266          {
+    267              P0DIR&=0xFD;
+    268          }
+    269          
+    270          void Init_IO(void)
+    271          {
+    272            P0DIR|=0x03;
+    273            P0SEL&=0xFC;
+    274          }
+    275          
+    276          //I2C起始信号
+    277          void I2C_Start()  
+    278          {
+    279              WriteSDA_1();
+    280              WriteSCL_1();
+    281              delay_usec(50);
+    282              WriteSDA_0();
+    283              delay_usec(50);
+    284              WriteSCL_0();
+    285              delay_usec(50);
+    286          }
+    287          
+    288          
+    289          //I2C停止信号
+    290          void I2C_Stop()  
+    291          {    
+    292             WriteSDA_0();
+    293             WriteSCL_1();
+    294             delay_usec(50);
+    295             WriteSDA_1();
+    296          }
+    297          
+    298          //I2C发送应答信号
+    299          //入口参数:ack (0:ACK 1:NAK)
+    300          void I2C_SendACK(uchar ack)
+    301          {
+    302              
+    303              SDA=ack;                     //写应答信号
+    304              WriteSCL_1();                   //拉高时钟线
+    305              delay_usec(50);//Delay5us();    //延时
+    306              WriteSCL_0();                   //拉低时钟线
+    307              delay_usec(50);//Delay5us();    //延时
+    308          
+    309          }
+    310          
+    311          //I2C接收应答信号
+    312          uchar I2C_RecvACK()
+    313          {
+    314              ReadSDA();
+    315              WriteSCL_1();                       //拉高时钟线
+    316              delay_usec(50);//Delay5us();    //延时
+    317              F0=SDA;                      //读应答信号
+    318              WriteSCL_0();                       //拉低时钟线
+    319              delay_usec(50);//Delay5us();    //延时
+    320              P0DIR|=0x20;
+    321              return F0;
+    322          
+    323          }
+    324          
+    325          //向I2C总线发送一个字节数据
+    326          void I2C_SendByte(uchar data)
+    327          {
+    328              uchar i;
+    329              P0DIR|=0x20;
+    330              
+    331              for(i=0;i<8;i++)         //8位计数器
+    332              {       
+    333                  if(data&0x80)
+    334                  {WriteSDA_1();}
+    335                  else 
+    336                  {WriteSDA_0();}
+    337                  
+    338                  data<<=1;
+    339                  WriteSCL_1();            //拉高时钟线
+    340                  delay_usec(50);          //延时
+    341                  WriteSCL_0();            //拉低时钟线
+    342                  delay_usec(50);          //延时
+    343              }
+    344              I2C_RecvACK();
+    345          }
+    346          
+    347          
+    348          //从I2C总线接收一个字节数据
+    349          uchar I2C_RecvByte()
+    350          {
+    351              uchar i;  
+    352              uchar data=0;
+    353              
+    354              WriteSDA_1();                 //使能内部上拉,准备读取数据
+    355              
+    356              for(i=0;i<8;i++)
+    357             {
+    358              WriteSCL_0();
+    359              delay_usec(50);
+    360              WriteSCL_1();
+    361              delay_usec(50);
+    362              
+    363              ReadSDA();
+    364              F0=SDA;
+    365              
+    366              if(F0)
+    367              {
+    368                data=data << 1;
+    369                data=data|0x01;
+    370              }
+    371              else
+    372                data=data<<1;
+    373            }
+    374            WriteSCL_0();
+    375            P0DIR|=0x20; 
+    376            return data;
+    377          }
+    378          
+    379          //向I2C设备写入一个字节数据
+    380          void Single_WriteI2C(uchar REG_Address,uchar REG_data)
+    381          {
+    382              I2C_Start();                  //起始信号
+    383              I2C_SendByte(SlaveAddress);   //发送设备地址+写信号
+    384              I2C_SendByte(REG_Address);    //内部寄存器地址，
+    385              I2C_SendByte(REG_data);       //内部寄存器数据，
+    386              I2C_Stop();                   //发送停止信号
+    387          
+    388          }
+    389          
+    390          //从I2C设备读取一个字节数据
+    391          uchar Single_ReadI2C(uchar REG_Address)
+    392          {
+    393          	uchar REG_data;
+    394          	I2C_Start();                   //起始信号
+    395          	I2C_SendByte(SlaveAddress);    //发送设备地址+写信号
+    396          	I2C_SendByte(REG_Address);     //发送存储单元地址，从0开始	
+    397          	I2C_Start();                   //起始信号
+    398          	I2C_SendByte(SlaveAddress+1);  //发送设备地址+读信号
+    399          	REG_data=I2C_RecvByte();       //读出寄存器数据
+    400          	I2C_SendACK(1);                //接收应答信号
+    401          	I2C_Stop();                    //停止信号
+    402          	return REG_data;
+    403          }
+    404          
+    405          //初始化MPU6050
+    406          void InitMPU6050()
+    407          {
+    408          	Single_WriteI2C(PWR_MGMT_1,0x00);	//解除休眠状态
+    409          	Single_WriteI2C(SMPLRT_DIV,0x07);
+    410          	Single_WriteI2C(CONFIG,0x06);
+    411          	Single_WriteI2C(GYRO_CONFIG,0x18);
+    412          	Single_WriteI2C(ACCEL_CONFIG,0x01);
+    413          }
+    414          
+    415          //合成数据
+    416          int GetData(uchar REG_Address)
+    417          {
+    418          	char H,L;
+    419          	H=Single_ReadI2C(REG_Address);
+    420          	L=Single_ReadI2C(REG_Address+1);
+    421          	return (H<<8)+L;   //合成数据
+    422          }
+    423          
+
+Errors: 11
+Warnings: 9

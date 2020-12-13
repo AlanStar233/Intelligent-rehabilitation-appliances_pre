@@ -1,0 +1,38 @@
+[DebugChecksum]
+Checksum=-165561730
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=1
+Leave target running=1
+[Aliases]
+A0=_ "C:\Users\Administrator\Desktop\加速度传感器\Components\hal\target\CC2530EB\hal_lcd.c" ""
+A1=_ "C:\Users\Administrator\Desktop\加速度传感器\Components\mt\MT_UART.c" ""
+A2=_ "C:\Users\Administrator\Desktop\加速度传感器\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A3=_ "E:\梁宇\项目2\zigbee读取MPU6050 WIN3.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+Count=4
+SuppressDialog=1

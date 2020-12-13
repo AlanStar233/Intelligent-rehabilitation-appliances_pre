@@ -1,0 +1,1318 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         19/May/2018  20:17:34 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\梁宇\项目2\zigbee读取MPU6050                    #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\Source\MPU6050.c          #
+#    Command line       =  -f "E:\梁宇\项目2\zigbee读取MPU6050                #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wCoord.cfg" (-DCPU32MHZ                  #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "E:\梁宇\项目2\zigbee读取MPU6050                #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xF000                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "E:\梁宇\项目2\zigbee读取MP #
+#                          U6050 WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Pro #
+#                          jects\zstack\Samples\SampleApp\Source\MPU6050.c"   #
+#                          -D ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D           #
+#                          MT_ZDO_FUNC -D LCD_SUPPORTED=FALSE -lC             #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\Li #
+#                          st\" -lA "E:\梁宇\项目2\zigbee读取MPU6050          #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\Li #
+#                          st\" --diag_suppress Pe001,Pa010 -o                #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\Ob #
+#                          j\" -e --no_code_motion --debug --core=plain       #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "E:\梁宇\项目2\zigbee读取M #
+#                          PU6050 WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\" -I      #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\Source\" -I   #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\ZMain\T #
+#                          I2530DB\" -I "E:\梁宇\项目2\zigbee读取MPU6050      #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\hal\include\" -I                         #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\hal\target\CC2530EB\" -I                 #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\high_level\" -I                      #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\low_level\srf04\" -I                 #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\low_level\srf04\single_chip\" -I     #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mt\" -I "E:\梁宇\项目2\zigbee读取MPU6050 #
+#                           WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\ #
+#                          Components\osal\include\" -I                       #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\saddr\" -I                      #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\af\" -I "E:\梁宇\项目2\zigbee读取M #
+#                          PU6050 WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\Components\stack\nwk\" -I                    #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\sapi\" -I                          #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\sec\" -I                           #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\sys\" -I                           #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\zdo\" -I                           #
+#                          "E:\梁宇\项目2\zigbee读取MPU6050                   #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\zmac\" -I "E:\梁宇\项目2\zigbee读取MPU60 #
+#                          50 WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projec #
+#                          ts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\. #
+#                          .\Components\zmac\f8w\" -Ohz --require_prototypes  #
+#    List file          =  E:\梁宇\项目2\zigbee读取MPU6050                    #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\Li #
+#                          st\MPU6050.lst                                     #
+#    Object file        =  E:\梁宇\项目2\zigbee读取MPU6050                    #
+#                          WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\Ob #
+#                          j\MPU6050.r51                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\梁宇\项目2\zigbee读取MPU6050 WIN2.0\ZStack-CC2530-2.5.1a-加速度传感器\Projects\zstack\Samples\SampleApp\Source\MPU6050.c
+      1          /******************************************************************************
+      2           * INCLUDES
+      3           */
+      4          
+      5          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xd0
+   \   union <unnamed> volatile __sfr _A_PSW
+   \                     _A_PSW:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      6          #include"MPU6050.h"
+      7          #include "OnBoard.h"
+      8          #include "hal_types.h"
+      9          
+     10          #define uint  unsigned int
+     11          #define uchar unsigned char
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     12          int accX,accY,accZ,graX,graY,graZ;
+   \                     accX:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     accY:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     accZ:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     graX:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     graY:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     graZ:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     13          
+     14          void delay_usec(uchar u);
+     15          void WriteSDA_0(void);
+     16          void WriteSDA_1(void);
+     17          void WriteSCL_0(void);
+     18          void WriteSCL_1(void);
+     19          void ReadSDA(void);
+     20          void Init_IO(void);
+     21          void I2C_Start(void);
+     22          void I2C_Stop(void);
+     23          void I2C_SendACK(uchar ack);
+     24          uchar I2C_RecvACK(void);
+     25          void I2C_SendByte(uchar data);
+     26          uchar I2C_RecvByte(void);
+     27          void Single_WriteI2C(uchar REG_Address,uchar REG_data);
+     28          uchar Single_ReadI2C(uchar REG_Address);
+     29          void InitMPU6050(void);
+     30          void ALLInit(void);
+     31          void Multiple_read_MPU6050(void);
+     32          void type_change(int num);
+     33          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     34          void ALLInit(void)
+   \                     ALLInit:
+     35          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     36             Init_IO();
+   \   000004                ; Setup parameters for call to function Init_IO
+   \   000004   12....       LCALL   ??Init_IO?relay
+     37             InitMPU6050();
+   \   000007                ; Setup parameters for call to function InitMPU6050
+   \   000007   12....       LCALL   ??InitMPU6050?relay
+     38          }
+   \   00000A   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     39          
+     40          /****************us延时函数 32M晶振 单周期MCU********************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     41          void delay_usec(uchar u)
+   \                     delay_usec:
+     42          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   8020         SJMP    ??delay_usec_0
+     43            while(u --)
+     44            {
+     45              /* 32 NOPs == 1 usecs */
+     46              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+   \                     ??delay_usec_1:
+   \   000002   00           nop
+   \   000003   00           nop
+   \   000004   00           nop
+   \   000005   00           nop
+     47              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+   \   000006   00           nop
+   \   000007   00           nop
+   \   000008   00           nop
+   \   000009   00           nop
+     48              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+   \   00000A   00           nop
+   \   00000B   00           nop
+   \   00000C   00           nop
+   \   00000D   00           nop
+     49              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+   \   00000E   00           nop
+   \   00000F   00           nop
+   \   000010   00           nop
+   \   000011   00           nop
+     50              asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   000012   00           nop
+   \   000013   00           nop
+   \   000014   00           nop
+   \   000015   00           nop
+     51              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+   \   000016   00           nop
+   \   000017   00           nop
+   \   000018   00           nop
+   \   000019   00           nop
+     52              asm("nop"); asm("nop"); asm("nop"); asm("nop"); 
+   \   00001A   00           nop
+   \   00001B   00           nop
+   \   00001C   00           nop
+   \   00001D   00           nop
+     53              asm("nop"); asm("nop"); asm("nop"); asm("nop");
+   \   00001E   00           nop
+   \   00001F   00           nop
+   \   000020   00           nop
+   \   000021   00           nop
+     54            }
+   \                     ??delay_usec_0:
+   \   000022   E9           MOV     A,R1
+   \   000023   F8           MOV     R0,A
+   \   000024   74FF         MOV     A,#-0x1
+   \   000026   28           ADD     A,R0
+   \   000027   19           DEC     R1
+   \   000028   04           INC     A
+   \   000029   70D7         JNZ     ??delay_usec_1
+     55          }
+   \   00002B   02....       LJMP    ?BRET
+     56          
+     57          /*****************************MPU6050*******************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     58          void WriteSDA_0(void) 
+   \                     WriteSDA_0:
+     59          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     60              P0DIR|=0x40;
+   \   000000   43FD40       ORL     0xfd,#0x40
+     61              SDA=0;
+   \   000003   C287         CLR     0x80.7
+     62          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE P0DIR
+   \   000008                REQUIRE _A_P0
+     63          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     64          void WriteSDA_1() 
+   \                     WriteSDA_1:
+     65          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     66              P0DIR|=0x40;
+   \   000000   43FD40       ORL     0xfd,#0x40
+     67              SDA=1;
+   \   000003   D287         SETB    0x80.7
+     68          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE P0DIR
+   \   000008                REQUIRE _A_P0
+     69              
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     70          void WriteSCL_0()    
+   \                     WriteSCL_0:
+     71          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     72              P0DIR|=0x80;
+   \   000000   43FD80       ORL     0xfd,#0x80
+     73              SCL=0;
+   \   000003   C286         CLR     0x80.6
+     74          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE P0DIR
+   \   000008                REQUIRE _A_P0
+     75          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     76          void WriteSCL_1()    
+   \                     WriteSCL_1:
+     77          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     78              P0DIR|=0x80;
+   \   000000   43FD80       ORL     0xfd,#0x80
+     79              SCL=1;
+   \   000003   D286         SETB    0x80.6
+     80          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE P0DIR
+   \   000008                REQUIRE _A_P0
+     81          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     82          void ReadSDA(void)//sda输入,=0
+   \                     ReadSDA:
+     83          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     84              P0DIR&=0xBF;
+   \   000000   53FDBF       ANL     0xfd,#0xbf
+     85          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P0DIR
+     86          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     87          void Init_IO(void)
+   \                     Init_IO:
+     88          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     89            P0DIR|=0xc0;
+   \   000000   43FDC0       ORL     0xfd,#0xc0
+     90            P0SEL&=0x3f;
+   \   000003   53F33F       ANL     0xf3,#0x3f
+     91          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0DIR
+   \   000009                REQUIRE P0SEL
+     92          
+     93          
+     94          //I2C起始信号
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     95          void I2C_Start()  
+   \                     I2C_Start:
+     96          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     97              WriteSDA_1();
+   \   000004                ; Setup parameters for call to function WriteSDA_1
+   \   000004   12....       LCALL   ??WriteSDA_1?relay
+     98              WriteSCL_1();
+   \   000007                ; Setup parameters for call to function WriteSCL_1
+   \   000007   12....       LCALL   ?Subroutine3 & 0xFFFF
+     99              delay_usec(50);
+    100              WriteSDA_0();
+   \                     ??CrossCallReturnLabel_0:
+   \   00000A                ; Setup parameters for call to function WriteSDA_0
+   \   00000A   12....       LCALL   ??WriteSDA_0?relay
+    101              delay_usec(50);
+   \   00000D                ; Setup parameters for call to function delay_usec
+   \   00000D   12....       LCALL   ??Subroutine6_0 & 0xFFFF
+    102              WriteSCL_0();
+    103              delay_usec(50);
+    104          }
+   \                     ??CrossCallReturnLabel_20:
+   \   000010   80..         SJMP    ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   7932         MOV     R1,#0x32
+   \   000002   12....       LCALL   ??delay_usec?relay
+   \   000005                ; Setup parameters for call to function WriteSCL_0
+   \   000005                ; Setup parameters for call to function WriteSCL_0
+   \   000005                ; Setup parameters for call to function WriteSCL_0
+   \   000005                REQUIRE ??Subroutine7_0
+   \   000005                ; // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine7_0:
+   \   000000   12....       LCALL   ??WriteSCL_0?relay
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003   7932         MOV     R1,#0x32
+   \   000005   12....       LCALL   ??delay_usec?relay
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ??WriteSCL_1?relay
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003   7932         MOV     R1,#0x32
+   \   000005   12....       LCALL   ??delay_usec?relay
+   \   000008   22           RET
+    105          
+    106          //I2C停止信号
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    107          void I2C_Stop()  
+   \                     I2C_Stop:
+    108          {    
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    109             WriteSDA_0();
+   \   000004                ; Setup parameters for call to function WriteSDA_0
+   \   000004   12....       LCALL   ??WriteSDA_0?relay
+    110             WriteSCL_1();
+   \   000007                ; Setup parameters for call to function WriteSCL_1
+   \   000007   12....       LCALL   ?Subroutine3 & 0xFFFF
+    111             delay_usec(50);
+    112             WriteSDA_1();
+   \                     ??CrossCallReturnLabel_1:
+   \   00000A                ; Setup parameters for call to function WriteSDA_1
+   \   00000A   12....       LCALL   ??WriteSDA_1?relay
+    113          }
+   \   00000D                REQUIRE ?Subroutine0
+   \   00000D                ; // Fall through to label ?Subroutine0
+    114          
+    115          //I2C发送应答信号
+    116          //入口参数:ack (0:ACK 1:NAK)
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ??WriteSCL_1?relay
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                ; Setup parameters for call to function delay_usec
+   \   000003                REQUIRE ??Subroutine6_0
+   \   000003                ; // Fall through to label ??Subroutine6_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    117          void I2C_SendACK(uchar ack)
+   \                     I2C_SendACK:
+    118          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    119              
+    120              SDA=ack;                     //写应答信号
+   \   000006   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000008   9287         MOV     0x80.7,C
+    121              WriteSCL_1();                   //拉高时钟线
+   \   00000A                ; Setup parameters for call to function WriteSCL_1
+   \   00000A   12....       LCALL   ?Subroutine2 & 0xFFFF
+    122              delay_usec(50);//Delay5us();    //延时
+    123              WriteSCL_0();                   //拉低时钟线
+    124              delay_usec(50);//Delay5us();    //延时
+    125          }
+   \                     ??CrossCallReturnLabel_18:
+   \   00000D   80..         SJMP    ??Subroutine8_0
+   \   00000F                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine8_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    126          
+    127          //I2C接收应答信号
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    128          uchar I2C_RecvACK()
+   \                     I2C_RecvACK:
+    129          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    130              ReadSDA();
+   \   000004   53FDBF       ANL     0xfd,#0xbf
+    131              WriteSCL_1();                       //拉高时钟线
+   \   000007                ; Setup parameters for call to function WriteSCL_1
+   \   000007   12....       LCALL   ?Subroutine3 & 0xFFFF
+    132              delay_usec(50);//Delay5us();    //延时
+    133              CY=SDA;                      //读应答信号
+   \                     ??CrossCallReturnLabel_2:
+   \   00000A   A287         MOV     C,0x80.7
+   \   00000C   92D7         MOV     0xd0.7,C
+    134              WriteSCL_0();                       //拉低时钟线
+   \   00000E                ; Setup parameters for call to function WriteSCL_0
+   \   00000E   12....       LCALL   ??Subroutine7_0 & 0xFFFF
+    135              delay_usec(50);//Delay5us();    //延时
+    136              P0DIR|=0x20;
+   \                     ??CrossCallReturnLabel_21:
+   \   000011   43FD20       ORL     0xfd,#0x20
+    137              return CY;
+   \   000014   A2D7         MOV     C,0xd0.7
+   \   000016   E4           CLR     A
+   \   000017   33           RLC     A
+   \   000018   F9           MOV     R1,A
+   \   000019   80..         SJMP    ?Subroutine0
+   \   00001B                REQUIRE _A_PSW
+   \   00001B                REQUIRE _A_P0
+   \   00001B                REQUIRE P0DIR
+    138          }
+    139          
+    140          //向I2C总线发送一个字节数据
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    141          void I2C_SendByte(uchar data)
+   \                     I2C_SendByte:
+    142          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    143              uchar i;
+    144              SDA_OUT();
+   \   000007   43FD80       ORL     0xfd,#0x80
+    145              
+    146              for(i=0;i<8;i++)         //8位计数器
+   \   00000A   7E08         MOV     R6,#0x8
+    147              {       
+    148                  if(data&0x80)
+   \                     ??I2C_SendByte_0:
+   \   00000C   EF           MOV     A,R7
+   \   00000D   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00000F   5005         JNC     ??I2C_SendByte_1
+    149                  {WriteSDA_1();}
+   \   000011                ; Setup parameters for call to function WriteSDA_1
+   \   000011   12....       LCALL   ??WriteSDA_1?relay
+   \   000014   8003         SJMP    ??I2C_SendByte_2
+    150                  else 
+    151                  {WriteSDA_0();}
+   \                     ??I2C_SendByte_1:
+   \   000016                ; Setup parameters for call to function WriteSDA_0
+   \   000016   12....       LCALL   ??WriteSDA_0?relay
+    152                  
+    153                  data<<=1;
+   \                     ??I2C_SendByte_2:
+   \   000019   EF           MOV     A,R7
+   \   00001A   C3           CLR     C
+   \   00001B   33           RLC     A
+   \   00001C   FF           MOV     R7,A
+    154                  WriteSCL_1();            //拉高时钟线
+   \   00001D                ; Setup parameters for call to function WriteSCL_1
+   \   00001D   12....       LCALL   ?Subroutine2 & 0xFFFF
+    155                  delay_usec(50);          //延时
+    156                  WriteSCL_0();            //拉低时钟线
+    157                  delay_usec(50);          //延时
+    158              }
+   \                     ??CrossCallReturnLabel_19:
+   \   000020   1E           DEC     R6
+   \   000021   EE           MOV     A,R6
+   \   000022   70E8         JNZ     ??I2C_SendByte_0
+    159              I2C_RecvACK();
+   \   000024                ; Setup parameters for call to function I2C_RecvACK
+   \   000024   12....       LCALL   ??I2C_RecvACK?relay
+    160          }
+   \   000027   80..         SJMP    ??Subroutine8_0
+   \   000029                REQUIRE P0DIR
+    161          
+    162          
+    163          //从I2C总线接收一个字节数据
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   EE           MOV     A,R6
+   \   000001   F9           MOV     R1,A
+   \   000002                REQUIRE ??Subroutine8_0
+   \   000002                ; // Fall through to label ??Subroutine8_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    164          uchar I2C_RecvByte()
+   \                     I2C_RecvByte:
+    165          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    166              uchar i;  
+    167              uchar data=0;
+   \   000005   7E00         MOV     R6,#0x0
+    168              
+    169              WriteSDA_1();                 //使能内部上拉,准备读取数据
+   \   000007                ; Setup parameters for call to function WriteSDA_1
+   \   000007   12....       LCALL   ??WriteSDA_1?relay
+    170              
+    171              for(i=0;i<8;i++)
+   \   00000A   7F08         MOV     R7,#0x8
+    172             {
+    173              WriteSCL_0();
+   \                     ??I2C_RecvByte_0:
+   \   00000C                ; Setup parameters for call to function WriteSCL_0
+   \   00000C   12....       LCALL   ??Subroutine7_0 & 0xFFFF
+    174              delay_usec(50);
+    175              WriteSCL_1();
+   \                     ??CrossCallReturnLabel_22:
+   \   00000F                ; Setup parameters for call to function WriteSCL_1
+   \   00000F   12....       LCALL   ?Subroutine3 & 0xFFFF
+    176              delay_usec(50);
+    177              
+    178              ReadSDA();
+   \                     ??CrossCallReturnLabel_3:
+   \   000012   53FDBF       ANL     0xfd,#0xbf
+    179              CY=SDA;
+   \   000015   A287         MOV     C,0x80.7
+   \   000017   92D7         MOV     0xd0.7,C
+    180              
+    181              if(CY)
+   \   000019   A2D7         MOV     C,0xd0.7
+   \   00001B   EE           MOV     A,R6
+   \   00001C   5006         JNC     ??I2C_RecvByte_1
+    182              {
+    183                data=data << 1;
+    184                data=data|0x01;
+   \   00001E   C3           CLR     C
+   \   00001F   33           RLC     A
+   \   000020   4401         ORL     A,#0x1
+   \   000022   8002         SJMP    ??I2C_RecvByte_2
+    185              }
+    186              else
+    187                data=data<<1;
+   \                     ??I2C_RecvByte_1:
+   \   000024   C3           CLR     C
+   \   000025   33           RLC     A
+   \                     ??I2C_RecvByte_2:
+   \   000026   FE           MOV     R6,A
+    188            }
+   \   000027   1F           DEC     R7
+   \   000028   EF           MOV     A,R7
+   \   000029   70E1         JNZ     ??I2C_RecvByte_0
+    189            WriteSCL_0();
+   \   00002B                ; Setup parameters for call to function WriteSCL_0
+   \   00002B   12....       LCALL   ??WriteSCL_0?relay
+    190            SDA_OUT(); 
+   \   00002E   43FD80       ORL     0xfd,#0x80
+    191            return data; 
+   \   000031   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \   000034                REQUIRE _A_PSW
+   \   000034                REQUIRE _A_P0
+   \   000034                REQUIRE P0DIR
+    192          }
+    193          
+    194          //向I2C设备写入一个字节数据
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    195          void Single_WriteI2C(uchar REG_Address,uchar REG_data)
+   \                     Single_WriteI2C:
+    196          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+    197              I2C_Start();                  //起始信号
+   \   000009                ; Setup parameters for call to function I2C_Start
+   \   000009   12....       LCALL   ?Subroutine4 & 0xFFFF
+    198              I2C_SendByte(SlaveAddress);   //发送设备地址+写信号
+    199              I2C_SendByte(REG_Address);    //内部寄存器地址，
+    200              I2C_SendByte(REG_data);       //内部寄存器数据，
+   \                     ??CrossCallReturnLabel_4:
+   \   00000C                ; Setup parameters for call to function I2C_SendByte
+   \   00000C   EE           MOV     A,R6
+   \   00000D   F9           MOV     R1,A
+   \   00000E   12....       LCALL   ??I2C_SendByte?relay
+    201              I2C_Stop();                   //发送停止信号
+   \   000011                ; Setup parameters for call to function I2C_Stop
+   \   000011   12....       LCALL   ??I2C_Stop?relay
+    202          }
+   \   000014   02....       LJMP    ??Subroutine8_0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ??I2C_Start?relay
+   \   000003                ; Setup parameters for call to function I2C_SendByte
+   \   000003                ; Setup parameters for call to function I2C_SendByte
+   \   000003   79D0         MOV     R1,#-0x30
+   \   000005   12....       LCALL   ??I2C_SendByte?relay
+   \   000008                ; Setup parameters for call to function I2C_SendByte
+   \   000008                ; Setup parameters for call to function I2C_SendByte
+   \   000008   EF           MOV     A,R7
+   \   000009   F9           MOV     R1,A
+   \   00000A   12....       LCALL   ??I2C_SendByte?relay
+   \   00000D   22           RET
+    203          
+    204          //从I2C设备读取一个字节数据
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    205          uchar Single_ReadI2C(uchar REG_Address)
+   \                     Single_ReadI2C:
+    206          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    207          	uchar REG_data;
+    208          	I2C_Start();                   //起始信号
+   \   000007                ; Setup parameters for call to function I2C_Start
+   \   000007   12....       LCALL   ?Subroutine4 & 0xFFFF
+    209          	I2C_SendByte(SlaveAddress);    //发送设备地址+写信号
+    210          	I2C_SendByte(REG_Address);     //发送存储单元地址，从0开始	
+    211          	I2C_Start();                   //起始信号
+   \                     ??CrossCallReturnLabel_5:
+   \   00000A                ; Setup parameters for call to function I2C_Start
+   \   00000A   12....       LCALL   ??I2C_Start?relay
+    212          	I2C_SendByte(SlaveAddress+1);  //发送设备地址+读信号
+   \   00000D                ; Setup parameters for call to function I2C_SendByte
+   \   00000D   79D1         MOV     R1,#-0x2f
+   \   00000F   12....       LCALL   ??I2C_SendByte?relay
+    213          	REG_data=I2C_RecvByte();       //读出寄存器数据
+   \   000012                ; Setup parameters for call to function I2C_RecvByte
+   \   000012   12....       LCALL   ??I2C_RecvByte?relay
+   \   000015   E9           MOV     A,R1
+   \   000016   FE           MOV     R6,A
+    214          	I2C_SendACK(1);                //接收应答信号
+   \   000017                ; Setup parameters for call to function I2C_SendACK
+   \   000017   7901         MOV     R1,#0x1
+   \   000019   12....       LCALL   ??I2C_SendACK?relay
+    215          	I2C_Stop();                    //停止信号
+   \   00001C                ; Setup parameters for call to function I2C_Stop
+   \   00001C   12....       LCALL   ??I2C_Stop?relay
+    216          	return REG_data;
+   \   00001F   02....       LJMP    ?Subroutine1 & 0xFFFF
+    217          }
+    218          
+    219          //初始化MPU6050
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    220          void InitMPU6050()
+   \                     InitMPU6050:
+    221          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    222          	Single_WriteI2C(PWR_MGMT_1,0x00);	//解除休眠状态
+   \   000004                ; Setup parameters for call to function Single_WriteI2C
+   \   000004   7A00         MOV     R2,#0x0
+   \   000006   796B         MOV     R1,#0x6b
+   \   000008   12....       LCALL   ??Single_WriteI2C?relay
+    223          	Single_WriteI2C(SMPLRT_DIV,0x07);
+   \   00000B                ; Setup parameters for call to function Single_WriteI2C
+   \   00000B   7A07         MOV     R2,#0x7
+   \   00000D   7919         MOV     R1,#0x19
+   \   00000F   12....       LCALL   ??Single_WriteI2C?relay
+    224          	Single_WriteI2C(CONFIG,0x06);
+   \   000012                ; Setup parameters for call to function Single_WriteI2C
+   \   000012   7A06         MOV     R2,#0x6
+   \   000014   791A         MOV     R1,#0x1a
+   \   000016   12....       LCALL   ??Single_WriteI2C?relay
+    225          	Single_WriteI2C(GYRO_CONFIG,0x18);
+   \   000019                ; Setup parameters for call to function Single_WriteI2C
+   \   000019   7A18         MOV     R2,#0x18
+   \   00001B   791B         MOV     R1,#0x1b
+   \   00001D   12....       LCALL   ??Single_WriteI2C?relay
+    226          	Single_WriteI2C(ACCEL_CONFIG,0x01);
+   \   000020                ; Setup parameters for call to function Single_WriteI2C
+   \   000020   7A01         MOV     R2,#0x1
+   \   000022   791C         MOV     R1,#0x1c
+   \   000024   12....       LCALL   ??Single_WriteI2C?relay
+    227          }
+   \   000027   02....       LJMP    ?Subroutine0 & 0xFFFF
+    228          
+    229          //*********************************************************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    230          void Multiple_read_MPU6050(void)
+   \                     Multiple_read_MPU6050:
+    231          {   
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    232            char BUF[12]; //接收数据缓存区  
+    233            BUF[0]=Single_ReadI2C(ACCEL_XOUT_H);
+   \   00000A                ; Setup parameters for call to function Single_ReadI2C
+   \   00000A   793B         MOV     R1,#0x3b
+   \   00000C   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00000F   85..82       MOV     DPL,?XSP + 0
+   \   000012   85..83       MOV     DPH,?XSP + 1
+   \   000015   F0           MOVX    @DPTR,A
+    234            BUF[1]=Single_ReadI2C(ACCEL_XOUT_L);
+   \   000016                ; Setup parameters for call to function Single_ReadI2C
+   \   000016   793C         MOV     R1,#0x3c
+   \   000018   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   00001B   F5..         MOV     ?V0 + 4,A
+   \   00001D   7401         MOV     A,#0x1
+   \   00001F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000022   E9           MOV     A,R1
+   \   000023   F0           MOVX    @DPTR,A
+    235            BUF[2]=Single_ReadI2C(ACCEL_YOUT_H);
+   \   000024                ; Setup parameters for call to function Single_ReadI2C
+   \   000024   793D         MOV     R1,#0x3d
+   \   000026   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000029   F5..         MOV     ?V0 + 2,A
+   \   00002B   7402         MOV     A,#0x2
+   \   00002D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000030   E9           MOV     A,R1
+   \   000031   F0           MOVX    @DPTR,A
+    236            BUF[3]=Single_ReadI2C(ACCEL_YOUT_L);
+   \   000032                ; Setup parameters for call to function Single_ReadI2C
+   \   000032   793E         MOV     R1,#0x3e
+   \   000034   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000037   F5..         MOV     ?V0 + 3,A
+   \   000039   7403         MOV     A,#0x3
+   \   00003B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003E   E9           MOV     A,R1
+   \   00003F   F0           MOVX    @DPTR,A
+    237            BUF[4]=Single_ReadI2C(ACCEL_ZOUT_H);
+   \   000040                ; Setup parameters for call to function Single_ReadI2C
+   \   000040   793F         MOV     R1,#0x3f
+   \   000042   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000045   F5..         MOV     ?V0 + 1,A
+   \   000047   7404         MOV     A,#0x4
+   \   000049   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004C   E9           MOV     A,R1
+   \   00004D   F0           MOVX    @DPTR,A
+    238            BUF[5]=Single_ReadI2C(ACCEL_ZOUT_L);
+   \   00004E                ; Setup parameters for call to function Single_ReadI2C
+   \   00004E   7940         MOV     R1,#0x40
+   \   000050   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000053   F5..         MOV     ?V0 + 10,A
+   \   000055   7405         MOV     A,#0x5
+   \   000057   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005A   E9           MOV     A,R1
+   \   00005B   F0           MOVX    @DPTR,A
+    239            
+    240            BUF[6]=Single_ReadI2C(GYRO_XOUT_H);
+   \   00005C                ; Setup parameters for call to function Single_ReadI2C
+   \   00005C   7943         MOV     R1,#0x43
+   \   00005E   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000061   F5..         MOV     ?V0 + 0,A
+   \   000063   7406         MOV     A,#0x6
+   \   000065   12....       LCALL   ?XSTACK_DISP0_8
+   \   000068   E9           MOV     A,R1
+   \   000069   F0           MOVX    @DPTR,A
+    241            BUF[7]=Single_ReadI2C(GYRO_XOUT_L);
+   \   00006A                ; Setup parameters for call to function Single_ReadI2C
+   \   00006A   7944         MOV     R1,#0x44
+   \   00006C   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   00006F   F5..         MOV     ?V0 + 8,A
+   \   000071   7407         MOV     A,#0x7
+   \   000073   12....       LCALL   ?XSTACK_DISP0_8
+   \   000076   E9           MOV     A,R1
+   \   000077   F0           MOVX    @DPTR,A
+    242            BUF[8]=Single_ReadI2C(GYRO_YOUT_H);
+   \   000078                ; Setup parameters for call to function Single_ReadI2C
+   \   000078   7945         MOV     R1,#0x45
+   \   00007A   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00007D   FF           MOV     R7,A
+   \   00007E   7408         MOV     A,#0x8
+   \   000080   12....       LCALL   ?XSTACK_DISP0_8
+   \   000083   E9           MOV     A,R1
+   \   000084   F0           MOVX    @DPTR,A
+    243            BUF[9]=Single_ReadI2C(GYRO_YOUT_L);
+   \   000085                ; Setup parameters for call to function Single_ReadI2C
+   \   000085   7946         MOV     R1,#0x46
+   \   000087   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   00008A   F5..         MOV     ?V0 + 6,A
+   \   00008C   7409         MOV     A,#0x9
+   \   00008E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000091   E9           MOV     A,R1
+   \   000092   F0           MOVX    @DPTR,A
+    244            BUF[10]=Single_ReadI2C(GYRO_ZOUT_H);
+   \   000093                ; Setup parameters for call to function Single_ReadI2C
+   \   000093   7947         MOV     R1,#0x47
+   \   000095   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000098   FE           MOV     R6,A
+   \   000099   740A         MOV     A,#0xa
+   \   00009B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009E   E9           MOV     A,R1
+   \   00009F   F0           MOVX    @DPTR,A
+    245            BUF[11]=Single_ReadI2C(GYRO_ZOUT_L);
+   \   0000A0                ; Setup parameters for call to function Single_ReadI2C
+   \   0000A0   7948         MOV     R1,#0x48
+   \   0000A2   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   0000A5   F5..         MOV     ?V0 + 12,A
+   \   0000A7   740B         MOV     A,#0xb
+   \   0000A9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AC   E9           MOV     A,R1
+   \   0000AD   F0           MOVX    @DPTR,A
+    246            
+    247            accX=(BUF[0]<<8)|BUF[1]; 
+   \   0000AE   85..82       MOV     DPL,?XSP + 0
+   \   0000B1   85..83       MOV     DPH,?XSP + 1
+   \   0000B4   E0           MOVX    A,@DPTR
+   \   0000B5   F9           MOV     R1,A
+   \   0000B6   E5..         MOV     A,?V0 + 4
+   \   0000B8   90....       MOV     DPTR,#accX
+   \   0000BB   F0           MOVX    @DPTR,A
+   \   0000BC   A3           INC     DPTR
+   \   0000BD   E9           MOV     A,R1
+   \   0000BE   F0           MOVX    @DPTR,A
+    248            accY=(BUF[2]<<8)|BUF[3]; 
+   \   0000BF   A9..         MOV     R1,?V0 + 2
+   \   0000C1   85....       MOV     ?V0 + 2,?V0 + 3
+   \   0000C4   E5..         MOV     A,?V0 + 2
+   \   0000C6   90....       MOV     DPTR,#accY
+   \   0000C9   F0           MOVX    @DPTR,A
+   \   0000CA   A3           INC     DPTR
+   \   0000CB   E9           MOV     A,R1
+   \   0000CC   F0           MOVX    @DPTR,A
+    249            accZ=(BUF[4]<<8)|BUF[5]; 
+   \   0000CD   E5..         MOV     A,?V0 + 10
+   \   0000CF   90....       MOV     DPTR,#accZ
+   \   0000D2   F0           MOVX    @DPTR,A
+   \   0000D3   A3           INC     DPTR
+   \   0000D4   E5..         MOV     A,?V0 + 1
+   \   0000D6   F0           MOVX    @DPTR,A
+    250            graX=(BUF[6]<<8)|BUF[7];
+   \   0000D7   E5..         MOV     A,?V0 + 8
+   \   0000D9   90....       MOV     DPTR,#graX
+   \   0000DC   F0           MOVX    @DPTR,A
+   \   0000DD   A3           INC     DPTR
+   \   0000DE   E5..         MOV     A,?V0 + 0
+   \   0000E0   F0           MOVX    @DPTR,A
+    251            graY=(BUF[8]<<8)|BUF[9];
+   \   0000E1   EF           MOV     A,R7
+   \   0000E2   F9           MOV     R1,A
+   \   0000E3   E5..         MOV     A,?V0 + 6
+   \   0000E5   90....       MOV     DPTR,#graY
+   \   0000E8   F0           MOVX    @DPTR,A
+   \   0000E9   A3           INC     DPTR
+   \   0000EA   E9           MOV     A,R1
+   \   0000EB   F0           MOVX    @DPTR,A
+    252            graZ=(BUF[10]<<8)|BUF[11];
+   \   0000EC   EE           MOV     A,R6
+   \   0000ED   F9           MOV     R1,A
+   \   0000EE   E5..         MOV     A,?V0 + 12
+   \   0000F0   90....       MOV     DPTR,#graZ
+   \   0000F3   F0           MOVX    @DPTR,A
+   \   0000F4   A3           INC     DPTR
+   \   0000F5   E9           MOV     A,R1
+   \   0000F6   F0           MOVX    @DPTR,A
+    253             
+    254          //  type_change(accX);
+    255          //  HalUARTWrite(0,"  ",2);
+    256          //  type_change(accY);
+    257          //  HalUARTWrite(0,"  ",2);
+    258          //  type_change(accZ);
+    259          //  HalUARTWrite(0,"  ",2);
+    260          //
+    261          //  type_change(graX);
+    262          //  HalUARTWrite(0,"  ",2);
+    263          //  type_change(graY);
+    264          //  HalUARTWrite(0,"  ",2);
+    265          //  type_change(graZ);
+    266          //  HalUARTWrite(0,"\n",1);
+    267          }
+   \   0000F7   740C         MOV     A,#0xc
+   \   0000F9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000FC   7F0E         MOV     R7,#0xe
+   \   0000FE   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   12....       LCALL   ??Single_ReadI2C?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ALLInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ALLInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_usec?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_usec
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WriteSDA_0?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WriteSDA_0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WriteSDA_1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WriteSDA_1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WriteSCL_0?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WriteSCL_0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WriteSCL_1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WriteSCL_1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReadSDA?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReadSDA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_IO?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_IO
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_SendACK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_SendACK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_RecvACK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_RecvACK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_SendByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_SendByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_RecvByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_RecvByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Single_WriteI2C?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Single_WriteI2C
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Single_ReadI2C?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Single_ReadI2C
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??InitMPU6050?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    InitMPU6050
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Multiple_read_MPU6050?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Multiple_read_MPU6050
+    268          
+    269          
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     ALLInit                   2      0      0
+       -> Init_IO              4      0      0
+       -> InitMPU6050          4      0      0
+     I2C_RecvACK               2      0      9
+       -> WriteSCL_1           4      0      0
+       -> delay_usec           4      0      0
+       -> WriteSCL_0           4      0      0
+       -> delay_usec           4      0      0
+     I2C_RecvByte              0      0     18
+       -> WriteSDA_1           0      0     18
+       -> WriteSCL_0           0      0     18
+       -> delay_usec           0      0     18
+       -> WriteSCL_1           0      0     18
+       -> delay_usec           0      0     18
+       -> WriteSCL_0           0      0     18
+     I2C_SendACK               0      0     18
+       -> WriteSCL_1           0      0     18
+       -> delay_usec           0      0     18
+       -> WriteSCL_0           0      0     18
+       -> delay_usec           0      0     18
+     I2C_SendByte              0      0     18
+       -> WriteSDA_1           0      0     18
+       -> WriteSDA_0           0      0     18
+       -> WriteSCL_1           0      0     18
+       -> delay_usec           0      0     18
+       -> WriteSCL_0           0      0     18
+       -> delay_usec           0      0     18
+       -> I2C_RecvACK          0      0     18
+     I2C_Start                 2      0      9
+       -> WriteSDA_1           4      0      0
+       -> WriteSCL_1           4      0      0
+       -> delay_usec           4      0      0
+       -> WriteSDA_0           4      0      0
+       -> delay_usec           4      0      0
+       -> WriteSCL_0           4      0      0
+       -> delay_usec           4      0      0
+     I2C_Stop                  2      0      9
+       -> WriteSDA_0           4      0      0
+       -> WriteSCL_1           4      0      0
+       -> delay_usec           4      0      0
+       -> WriteSDA_1           4      0      0
+     InitMPU6050               2      0      0
+       -> Single_WriteI2C      4      0      0
+       -> Single_WriteI2C      4      0      0
+       -> Single_WriteI2C      4      0      0
+       -> Single_WriteI2C      4      0      0
+       -> Single_WriteI2C      4      0      0
+     Init_IO                   0      0      0
+     Multiple_read_MPU6050     1      0     34
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+       -> Single_ReadI2C       0      0     68
+     ReadSDA                   0      0      0
+     Single_ReadI2C            0      0     43
+       -> I2C_Start            0      0     18
+       -> I2C_SendByte         0      0     18
+       -> I2C_SendByte         0      0     18
+       -> I2C_Start            0      0     18
+       -> I2C_SendByte         0      0     18
+       -> I2C_RecvByte         0      0     18
+       -> I2C_SendACK          0      0     18
+       -> I2C_Stop             0      0     18
+     Single_WriteI2C           0      0      9
+       -> I2C_Start            0      0     18
+       -> I2C_SendByte         0      0     18
+       -> I2C_SendByte         0      0     18
+       -> I2C_SendByte         0      0     18
+       -> I2C_Stop             0      0     18
+     WriteSCL_0                0      0      9
+     WriteSCL_1                0      0      9
+     WriteSDA_0                0      0      9
+     WriteSDA_1                0      0      9
+     delay_usec                0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_P0                            1
+     _A_PSW                           1
+     P0SEL                            1
+     P0DIR                            1
+     accX                             2
+     accY                             2
+     accZ                             2
+     graX                             2
+     graY                             2
+     graZ                             2
+     ALLInit                         13
+     ?Subroutine0                     7
+     delay_usec                      46
+     WriteSDA_0                       8
+     WriteSDA_1                       8
+     WriteSCL_0                       8
+     WriteSCL_1                       8
+     ReadSDA                          6
+     Init_IO                          9
+     I2C_Start                       18
+     ??Subroutine6_0                  5
+     ??Subroutine7_0                  9
+     ?Subroutine3                     9
+     I2C_Stop                        13
+     ?Subroutine2                     3
+     I2C_SendACK                     15
+     ??Subroutine8_0                  5
+     I2C_RecvACK                     27
+     I2C_SendByte                    41
+     ?Subroutine1                     2
+     I2C_RecvByte                    52
+     Single_WriteI2C                 23
+     ?Subroutine4                    14
+     Single_ReadI2C                  34
+     InitMPU6050                     42
+     Multiple_read_MPU6050          257
+     ?Subroutine5                     5
+     ??ALLInit?relay                  6
+     ??delay_usec?relay               6
+     ??WriteSDA_0?relay               6
+     ??WriteSDA_1?relay               6
+     ??WriteSCL_0?relay               6
+     ??WriteSCL_1?relay               6
+     ??ReadSDA?relay                  6
+     ??Init_IO?relay                  6
+     ??I2C_Start?relay                6
+     ??I2C_Stop?relay                 6
+     ??I2C_SendACK?relay              6
+     ??I2C_RecvACK?relay              6
+     ??I2C_SendByte?relay             6
+     ??I2C_RecvByte?relay             6
+     ??Single_WriteI2C?relay          6
+     ??Single_ReadI2C?relay           6
+     ??InitMPU6050?relay              6
+     ??Multiple_read_MPU6050?relay    6
+
+ 
+ 687 bytes in segment BANKED_CODE
+ 108 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+  12 bytes in segment XDATA_Z
+ 
+ 795 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 4 bytes shared)
+  12 bytes of XDATA memory
+
+Errors: none
+Warnings: none
